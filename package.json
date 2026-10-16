@@ -1,0 +1,16 @@
+{
+  "name": "amazanban",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension that turns your Amazon orders page into a Kanban board grouped by delivery status.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check extension/background.js && node --check extension/src/classify.js && node --check extension/src/parse.js && node --check extension/src/board.js",
+    "build": "node scripts/build.js",
+    "icons": "python3 scripts/make-icons.py"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
