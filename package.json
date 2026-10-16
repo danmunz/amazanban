@@ -8,7 +8,8 @@
     "test": "node --test test/*.test.js",
     "check": "node --check extension/background.js && node --check extension/src/classify.js && node --check extension/src/parse.js && node --check extension/src/board.js",
     "build": "node scripts/build.js",
-    "icons": "python3 scripts/make-icons.py"
+    "icons": "python3 scripts/make-icons.py",
+    "store-assets": "node scripts/store-assets.js"
   },
   "engines": {
     "node": ">=20"

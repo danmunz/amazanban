@@ -85,7 +85,12 @@ input {
   padding: 10px 20px;
   background: var(--bar);
   color: var(--bar-ink);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.bar > * {
+  flex: none;
 }
 
 .brand {
@@ -128,18 +133,35 @@ input {
   padding: 0 10px;
 }
 
-.search {
-  width: 220px;
+.bar > .search {
+  flex: 0 1 220px;
+  min-width: 120px;
 }
 
 .search::placeholder {
   color: #9aa5b1;
 }
 
-.summary {
+/* Chips that don't fit wrap onto a hidden second row instead of squeezing the bar. */
+.bar > .summary {
+  flex: 0 1 auto;
+  min-width: 0;
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
+  height: 24px;
+  overflow: hidden;
+}
+
+.bar > .spacer {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+@media (max-width: 1400px) {
+  .load-status.idle {
+    display: none;
+  }
 }
 
 .chip {
@@ -161,10 +183,6 @@ input {
   height: 7px;
   border-radius: 50%;
   background: var(--tone);
-}
-
-.spacer {
-  flex: 1;
 }
 
 .load-status {

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amazanban demo</title>
+  <style>
+    body { margin: 0; padding: 24px; font: 14px/1.4 system-ui, sans-serif; background: #fff; color: #111; }
+    .order-card { border: 1px solid #ddd; border-radius: 8px; margin: 12px 0; padding: 12px; }
+    .item-box img { width: 60px; height: 60px; }
+  </style>
+  <script>
+    // Stand-in for the chrome.* APIs the content scripts use.
+    Object.defineProperty(window, "chrome", {
+      configurable: true,
+      writable: true,
+      value: {
+        runtime: {
+          getURL: (p) => new URL(`../../extension/${p}`, location.href).href,
+          onMessage: { addListener() {} },
+        },
+        storage: { local: { get: async () => ({ autoOpen: true, collapsed: [] }), set() {} } },
+      },
+    });
+  </script>
+</head>
+<body>
+  <h1>Amazanban demo orders</h1>
+  <p>Fake orders in amazon.com's markup, used for store screenshots and manual testing. Open this file in Chrome; the board opens over it.</p>
+  <div id="orders"></div>
+  <script src="demo-orders.js"></script>
+  <script src="../../extension/src/classify.js"></script>
+  <script src="../../extension/src/parse.js"></script>
+  <script src="../../extension/src/board.js"></script>
+</body>
+</html>

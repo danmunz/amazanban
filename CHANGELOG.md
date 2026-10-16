@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Store icon now has the 16px transparent padding the Chrome Web Store asks for.
+- Board header stays on one line at laptop widths; status chips that don't fit are hidden.
+- Added a privacy policy, a demo board with made-up orders, Web Store screenshots and promo tiles, and listing text.
+
 ## 0.1.0 — 2026-10-16
 
 First version.

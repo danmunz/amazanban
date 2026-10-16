@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Amazanban promo tile</title>
+  <!-- Rendered by scripts/store-assets.js at 440x280 (?size=small) and 1400x560 (?size=marquee). -->
+  <style>
+    :root {
+      --navy: #131921;
+      --navy-2: #1d2733;
+      --orange: #ff9900;
+      --indigo: #7c7cf2;
+      --blue: #4a95f0;
+      --amber: #f5a524;
+      --green: #3fbf72;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      background:
+        radial-gradient(120% 90% at 85% 10%, #24344a 0%, transparent 60%),
+        radial-gradient(90% 80% at 0% 100%, #2a2010 0%, transparent 55%),
+        var(--navy);
+      overflow: hidden;
+      font-family: "Amazon Ember", system-ui, -apple-system, "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stage { display: flex; align-items: center; gap: var(--gap); }
+
+    .mark { display: flex; gap: calc(var(--u) * 1.1); align-items: flex-start; height: calc(var(--u) * 11); }
+    .mark i { display: block; width: calc(var(--u) * 3); border-radius: calc(var(--u) * 0.8); background: var(--orange); }
+    .mark i:nth-child(1) { height: 100%; }
+    .mark i:nth-child(2) { height: 66%; opacity: .85; }
+    .mark i:nth-child(3) { height: 83%; opacity: .7; }
+
+    .brand { display: flex; flex-direction: column; gap: calc(var(--u) * 2); }
+    .wordmark { color: #f4f2ee; font-weight: 800; font-size: calc(var(--u) * 7.5); letter-spacing: -0.02em; line-height: 1; }
+
+    .board { display: flex; gap: calc(var(--u) * 1.6); align-items: flex-start; }
+    .col {
+      width: calc(var(--u) * 11.5);
+      padding: calc(var(--u) * 1.2);
+      border-radius: calc(var(--u) * 1.6);
+      background: var(--navy-2);
+      border-top: calc(var(--u) * 0.7) solid var(--c);
+      display: flex; flex-direction: column; gap: calc(var(--u) * 1.1);
+      box-shadow: 0 calc(var(--u) * 1.5) calc(var(--u) * 4) rgba(0,0,0,.35);
+    }
+    .col:nth-child(2) { margin-top: calc(var(--u) * 3); }
+    .col:nth-child(3) { margin-top: calc(var(--u) * 1); }
+    .col:nth-child(4) { margin-top: calc(var(--u) * 4); }
+    .head { height: calc(var(--u) * 1.4); width: 60%; border-radius: 99px; background: var(--c); opacity: .9; }
+    .card {
+      background: #fff;
+      border-radius: calc(var(--u) * 1);
+      padding: calc(var(--u) * 1);
+      display: flex; flex-direction: column; gap: calc(var(--u) * 0.7);
+    }
+    .ph { height: calc(var(--u) * 5.2); border-radius: calc(var(--u) * 0.7); background: var(--p); }
+    .ln { height: calc(var(--u) * 0.9); border-radius: 99px; background: #d9d6cf; }
+    .ln.s { width: 55%; background: var(--c); }
+
+    body.small { --u: 5.6px; --gap: 34px; }
+    body.small .wordmark { display: none; }
+    body.small .mark { height: calc(var(--u) * 14); }
+    body.marquee { --u: 8.5px; --gap: 110px; }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="brand">
+      <div class="mark"><i></i><i></i><i></i></div>
+      <div class="wordmark">Amazanban</div>
+    </div>
+    <div class="board">
+      <div class="col" style="--c: var(--indigo)">
+        <div class="head"></div>
+        <div class="card"><div class="ph" style="--p:#dbeafe"></div><div class="ln"></div><div class="ln s"></div></div>
+        <div class="card"><div class="ph" style="--p:#fde7c8"></div><div class="ln"></div><div class="ln s"></div></div>
+      </div>
+      <div class="col" style="--c: var(--blue)">
+        <div class="head"></div>
+        <div class="card"><div class="ph" style="--p:#ede9fe"></div><div class="ln"></div><div class="ln s"></div></div>
+        <div class="card"><div class="ph" style="--p:#dcfce7"></div><div class="ln"></div><div class="ln s"></div></div>
+      </div>
+      <div class="col" style="--c: var(--amber)">
+        <div class="head"></div>
+        <div class="card"><div class="ph" style="--p:#fef9c3"></div><div class="ln"></div><div class="ln s"></div></div>
+        <div class="card"><div class="ph" style="--p:#fce7f3"></div><div class="ln"></div><div class="ln s"></div></div>
+        <div class="card"><div class="ph" style="--p:#e0f2fe"></div><div class="ln"></div><div class="ln s"></div></div>
+      </div>
+      <div class="col" style="--c: var(--green)">
+        <div class="head"></div>
+        <div class="card"><div class="ph" style="--p:#ffe4e6"></div><div class="ln"></div><div class="ln s"></div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.body.className = new URLSearchParams(location.search).get("size") || "small";
+  </script>
+</body>
+</html>

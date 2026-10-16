@@ -224,6 +224,7 @@
 
   function renderStatus() {
     const n = state.shipments.size;
+    statusEl.classList.remove("idle");
     if (state.loading && state.progress) {
       statusEl.replaceChildren(
         h("span", { class: "spinner" }),
@@ -233,6 +234,7 @@
       statusEl.replaceChildren(h("span", { class: "spinner" }), "Reading your orders…");
     } else {
       statusEl.textContent = `${n} shipment${n === 1 ? "" : "s"}`;
+      statusEl.classList.add("idle");
     }
   }
 

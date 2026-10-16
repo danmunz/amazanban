@@ -44,7 +44,9 @@ To update, `git pull` and click the reload icon on Amazanban's card in `chrome:/
 
 ## Privacy
 
-Everything runs in your browser on amazon.com. Amazanban sends no data anywhere and has no analytics. The only thing it stores is your preferences, in `chrome.storage.local`.
+Everything runs in your browser on amazon.com. Amazanban sends no data anywhere and has no analytics. The only thing it stores is your preferences, in `chrome.storage.local`. See the full [privacy policy](PRIVACY.md).
+
+Amazanban is an independent project and is not affiliated with Amazon.
 
 ## Development
 
@@ -62,7 +64,19 @@ npm run check
 npm run build
 ```
 
+### Demo board
+
+[`store/demo/index.html`](store/demo/index.html) is a page of made-up orders in amazon.com's markup. Open it in Chrome and the real board renders over it, with every date relative to today. It's handy for working on the UI without an Amazon account, and it's what the store screenshots are made from.
+
+### Commands
+
 `npm test` runs the status-classifier tests, `npm run check` syntax-checks the scripts, and `npm run build` zips `extension/` into `dist/amazanban-<version>.zip` for the Web Store. Bump `version` in both `extension/manifest.json` and `package.json` before building; the build stops if they differ.
+
+```bash
+npm run store-assets
+```
+
+That renders the Web Store screenshots (from the demo board) and promo tiles with headless Chrome into `store/`. [`store/LISTING.md`](store/LISTING.md) has the listing text, privacy answers, and the publishing checklist.
 
 ### Layout
 
@@ -75,7 +89,8 @@ extension/
   src/board.js       Board UI (in a shadow root, so Amazon's CSS can't leak in)
   src/board.css
   icons/
-scripts/             build.js, make-icons.py
+scripts/             build.js, make-icons.py, store-assets.js
+store/               Web Store listing text, demo board, screenshots, promo tiles
 test/                node:test tests
 ```
 
